@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.hsae.d531mc.jni"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+     //   ndk {
+          //  moduleName "native-lib"
+           // abiFilters "arm64-v8a"
+//            toolchain = 'clang'
+//            CFlags.addAll(['-Wall'])
+     //   }
+
+//        testOptions {
+//            unitTests {
+//                includeAndroidResources = true
+//            }
+//        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+//    packagingOptions {
+//        pickFirst 'lib/arm64-v8a/libCluster_Video-server.so'
+//        pickFirst 'lib/arm64-v8a/libx4serial.so'
+//        pickFirst 'lib/arm64-v8a/libx4someipcore.so'
+//        pickFirst 'lib/arm64-v8a/libx4someipcfg.so'
+//        pickFirst 'lib/arm64-v8a/libx4someip.so'
+//        pickFirst 'lib/arm64-v8a/libsomeip-common.so'
+//        pickFirst 'lib/arm64-v8a/libxml2.so'
+//        pickFirst 'lib/arm64-v8a/libx4base.so'
+//        pickFirst 'lib/x86_64/libCluster_Video-server.so'
+//        pickFirst 'lib/x86_64/libx4serial.so'
+//        pickFirst 'lib/x86_64/libx4someipcore.so'
+//        pickFirst 'lib/x86_64/libx4someipcfg.so'
+//        pickFirst 'lib/x86_64/libx4someip.so'
+//        pickFirst 'lib/x86_64/libsomeip-common.so'
+//        pickFirst 'lib/x86_64/libx4base.so'
+//        pickFirst 'lib/x86_64/libxml2.so'
+//    }
+
+    sourceSets {
+        main{
+            jniLibs.srcDirs = ['libs']
+//            jni {
+//                srcDirs 'src\\main\\jni'
+//            }
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jnidemo/Android.mk')
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

@@ -1,0 +1,45 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FrameLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundGravity="center_vertical">
+
+
+    <FrameLayout
+        android:id="@+id/s1"
+        android:layout_width="600dp"
+        android:layout_height="300dp"
+        android:background="#FF6143" />
+
+
+    <FrameLayout
+        android:id="@+id/s2"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:background="#7BFE00"
+         />
+
+
+    <FrameLayout
+        android:id="@+id/s3"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:background="#FFFF00"
+        />
+
+    <!--        <TextView-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:background="#7BFE00" />-->
+
+
+
+<!--    <TextView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:background="#FFFF00" />-->
+
+
+
+</FrameLayout>

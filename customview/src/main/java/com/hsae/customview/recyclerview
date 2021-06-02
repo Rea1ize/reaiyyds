@@ -1,0 +1,9 @@
+recyclerview本身是继承自viewgroup,那么就是自定义viewgroup
+
+既然涉及到自定义组件，那么当我们自己来实现一个自定义ViewGroup，最重要的步骤无非是下面几点：
+
+    重写onMeasure用于确定自定义ViewGroup的大小
+    重写onLayout用于布局子view的位置
+
+Adapter负责提供View
+LayoutManager负责决定它们在RecyclerView中摆放的位置以及在窗口中不可见之后的回收策略
